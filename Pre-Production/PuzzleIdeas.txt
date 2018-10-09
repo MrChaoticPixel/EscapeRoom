@@ -1,0 +1,14 @@
+Egyptian Temple Escape Room
+
+As the player, your goal is to figure out how to complete the puzzle and escape the Temple before the sand fills the room and kills you.
+
+	- Sand filling temple room slowly, gradually slows your speed the deeper it gets and kills you if it gets too deep.
+
+	Puzzle Ideas
+		- Interact with Anubis statue to change its stance, this will open a compartment in the room with a object for another puzzle
+		- Place Gem on pillar to reflect light onto something which will reveal a puzzle similar to the one below
+		- Re-order tablets on wall so hieroglyphics are in order, for example there is a Moon tablet, Sun tablet and Earth tablet which you would have to put into order, or 
+		something similar
+		- Catch sand pouring from roof into a bucket to use as a weight to balance a scale
+		- 
+
