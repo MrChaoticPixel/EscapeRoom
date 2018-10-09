@@ -10,5 +10,5 @@ As the player, your goal is to figure out how to complete the puzzle and escape 
 		- Re-order tablets on wall so hieroglyphics are in order, for example there is a Moon tablet, Sun tablet and Earth tablet which you would have to put into order, or 
 		something similar
 		- Catch sand pouring from roof into a bucket to use as a weight to balance a scale
-		- 
+		- Segmented Pillars, Rotate, Match Pattern
 
