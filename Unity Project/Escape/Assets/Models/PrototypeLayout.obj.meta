@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 2eef2440591fb9a4b9bf4b6a817f8730
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: FloorLeft_LevelLayout01
+    100002: LevelLayout01_Anubis1
+    100004: LevelLayout01_Anubis2
+    100006: LevelLayout01_Bridge1
+    100008: LevelLayout01_Bridge2
+    100010: LevelLayout01_BrokenPillar
+    100012: LevelLayout01_BrokenPillarBase
+    100014: LevelLayout01_EXIT
+    100016: LevelLayout01_FinalPuzzle
+    100018: LevelLayout01_FloorRight
+    100020: LevelLayout01_GemPlatform
+    100022: LevelLayout01_NINE_Puzzle
+    100024: LevelLayout01_Pillar1
+    100026: LevelLayout01_Pillar3
+    100028: LevelLayout01_Pillar4
+    100030: LevelLayout01_Pillar5
+    100032: LevelLayout01_Pillar6
+    100034: LevelLayout01_PressurePlate
+    100036: LevelLayout01_QuickSand
+    100038: LevelLayout01_RotatingWall
+    100040: LevelLayout01_scales
+    100042: LevelLayout01_Torch01
+    100044: LevelLayout01_Torch02
+    100046: LevelLayout01_Torch03
+    100048: LevelLayout01_Torch04
+    100050: LevelLayout01_Torch05
+    100052: LevelLayout01_Torch06
+    100054: //RootNode
+    400000: FloorLeft_LevelLayout01
+    400002: LevelLayout01_Anubis1
+    400004: LevelLayout01_Anubis2
+    400006: LevelLayout01_Bridge1
+    400008: LevelLayout01_Bridge2
+    400010: LevelLayout01_BrokenPillar
+    400012: LevelLayout01_BrokenPillarBase
+    400014: LevelLayout01_EXIT
+    400016: LevelLayout01_FinalPuzzle
+    400018: LevelLayout01_FloorRight
+    400020: LevelLayout01_GemPlatform
+    400022: LevelLayout01_NINE_Puzzle
+    400024: LevelLayout01_Pillar1
+    400026: LevelLayout01_Pillar3
+    400028: LevelLayout01_Pillar4
+    400030: LevelLayout01_Pillar5
+    400032: LevelLayout01_Pillar6
+    400034: LevelLayout01_PressurePlate
+    400036: LevelLayout01_QuickSand
+    400038: LevelLayout01_RotatingWall
+    400040: LevelLayout01_scales
+    400042: LevelLayout01_Torch01
+    400044: LevelLayout01_Torch02
+    400046: LevelLayout01_Torch03
+    400048: LevelLayout01_Torch04
+    400050: LevelLayout01_Torch05
+    400052: LevelLayout01_Torch06
+    400054: //RootNode
+    2100000: initialShadingGroup
+    2300000: FloorLeft_LevelLayout01
+    2300002: LevelLayout01_Anubis1
+    2300004: LevelLayout01_Anubis2
+    2300006: LevelLayout01_Bridge1
+    2300008: LevelLayout01_Bridge2
+    2300010: LevelLayout01_BrokenPillar
+    2300012: LevelLayout01_BrokenPillarBase
+    2300014: LevelLayout01_EXIT
+    2300016: LevelLayout01_FinalPuzzle
+    2300018: LevelLayout01_FloorRight
+    2300020: LevelLayout01_GemPlatform
+    2300022: LevelLayout01_NINE_Puzzle
+    2300024: LevelLayout01_Pillar1
+    2300026: LevelLayout01_Pillar3
+    2300028: LevelLayout01_Pillar4
+    2300030: LevelLayout01_Pillar5
+    2300032: LevelLayout01_Pillar6
+    2300034: LevelLayout01_PressurePlate
+    2300036: LevelLayout01_QuickSand
+    2300038: LevelLayout01_RotatingWall
+    2300040: LevelLayout01_scales
+    2300042: LevelLayout01_Torch01
+    2300044: LevelLayout01_Torch02
+    2300046: LevelLayout01_Torch03
+    2300048: LevelLayout01_Torch04
+    2300050: LevelLayout01_Torch05
+    2300052: LevelLayout01_Torch06
+    3300000: FloorLeft_LevelLayout01
+    3300002: LevelLayout01_Anubis1
+    3300004: LevelLayout01_Anubis2
+    3300006: LevelLayout01_Bridge1
+    3300008: LevelLayout01_Bridge2
+    3300010: LevelLayout01_BrokenPillar
+    3300012: LevelLayout01_BrokenPillarBase
+    3300014: LevelLayout01_EXIT
+    3300016: LevelLayout01_FinalPuzzle
+    3300018: LevelLayout01_FloorRight
+    3300020: LevelLayout01_GemPlatform
+    3300022: LevelLayout01_NINE_Puzzle
+    3300024: LevelLayout01_Pillar1
+    3300026: LevelLayout01_Pillar3
+    3300028: LevelLayout01_Pillar4
+    3300030: LevelLayout01_Pillar5
+    3300032: LevelLayout01_Pillar6
+    3300034: LevelLayout01_PressurePlate
+    3300036: LevelLayout01_QuickSand
+    3300038: LevelLayout01_RotatingWall
+    3300040: LevelLayout01_scales
+    3300042: LevelLayout01_Torch01
+    3300044: LevelLayout01_Torch02
+    3300046: LevelLayout01_Torch03
+    3300048: LevelLayout01_Torch04
+    3300050: LevelLayout01_Torch05
+    3300052: LevelLayout01_Torch06
+    4300000: FloorLeft_LevelLayout01
+    4300002: LevelLayout01_Anubis1
+    4300004: LevelLayout01_Anubis2
+    4300006: LevelLayout01_Bridge1
+    4300008: LevelLayout01_Bridge2
+    4300010: LevelLayout01_BrokenPillar
+    4300012: LevelLayout01_BrokenPillarBase
+    4300014: LevelLayout01_EXIT
+    4300016: LevelLayout01_FinalPuzzle
+    4300018: LevelLayout01_FloorRight
+    4300020: LevelLayout01_GemPlatform
+    4300022: LevelLayout01_NINE_Puzzle
+    4300024: LevelLayout01_Pillar1
+    4300026: LevelLayout01_Pillar3
+    4300028: LevelLayout01_Pillar4
+    4300030: LevelLayout01_Pillar5
+    4300032: LevelLayout01_Pillar6
+    4300034: LevelLayout01_PressurePlate
+    4300036: LevelLayout01_QuickSand
+    4300038: LevelLayout01_RotatingWall
+    4300040: LevelLayout01_scales
+    4300042: LevelLayout01_Torch01
+    4300044: LevelLayout01_Torch02
+    4300046: LevelLayout01_Torch03
+    4300048: LevelLayout01_Torch04
+    4300050: LevelLayout01_Torch05
+    4300052: LevelLayout01_Torch06
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
