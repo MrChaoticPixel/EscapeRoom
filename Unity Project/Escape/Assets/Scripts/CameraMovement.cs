@@ -12,26 +12,25 @@ public class CameraMovement : MonoBehaviour {
 
     public RotationAxis axes = RotationAxis.MouseX;
 
-    public float minimumVert = -45.0f;
-    public float maximumVert = 45.0f;
+    public float minimumVert = -65.0f;
+    public float maximumVert = 85.0f;
 
     public float sensHorizontal = 10.0f;
     public float sensVertical = 10.0f;
 
     public float _rotationX = 0;
-    public bool KeyboardMode, GamepadMode;
+  
 
     // Use this for initialization
     void Start()
     {
-        KeyboardMode = true;
-        GamepadMode = false;
+
     }
 
         // Update is called once per frame
         void Update()
     {
-        if (KeyboardMode == true)
+        if (CharacterMovement.KeyboardMode == true)
         {
             if (axes == RotationAxis.MouseX)
             {
@@ -47,7 +46,7 @@ public class CameraMovement : MonoBehaviour {
                 transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
             }
         }
-        if (GamepadMode == true)
+        if (CharacterMovement.GamepadMode == true)
         {
             if (axes == RotationAxis.MouseX)
             {
@@ -66,17 +65,5 @@ public class CameraMovement : MonoBehaviour {
 
 
     }
-    public void ToggleGamepad(bool newValue)
-    {
-        if (KeyboardMode == true)
-        {
-            KeyboardMode = false;
-            GamepadMode = true;
-        }
-        else
-        {
-            GamepadMode = false;
-            KeyboardMode = true;
-        }
-    }
+
 }

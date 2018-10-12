@@ -5,15 +5,16 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour {
 
     public float speed;
-    public bool canmov, KeyboardMode, GamepadMode;
+    public bool canmov;
+    public static bool KeyboardMode, GamepadMode;
 
-    private Rigidbody rb;
+    public Rigidbody rb;
 
     void Start()
-    {
+    {      
         canmov = true;
-        KeyboardMode = true;
-        GamepadMode = false;
+        KeyboardMode = false;
+        GamepadMode = true;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -76,11 +77,13 @@ public class CharacterMovement : MonoBehaviour {
     {
         if (KeyboardMode == true)
         {
+            Cursor.visible = true;
             KeyboardMode = false;
             GamepadMode = true;
         }
         else
         {
+            Cursor.visible = false;
             GamepadMode = false;
             KeyboardMode = true;
         }
