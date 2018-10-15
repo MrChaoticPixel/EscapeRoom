@@ -5,14 +5,16 @@ using UnityEngine;
 public class ItemInteraction : MonoBehaviour {
 
     public RaycastHit hit;
-    public static bool HoldingObject;
+    public static bool HoldingObject, HoldingGlass, InventoryFull;
 
 	// Use this for initialization
 	void Start () {
 
         HoldingObject = false;
-		
-	}
+        HoldingGlass = false;
+        InventoryFull = false;
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -21,43 +23,104 @@ public class ItemInteraction : MonoBehaviour {
 
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
 
-        if (Physics.Raycast(ray, out hit, 30))
+        if (Physics.Raycast(ray, out hit, 20))
         {
 
             if (hit.collider.gameObject.GetComponent<ItemResponse>() !=null)
             {
                 hit.collider.gameObject.GetComponent<ItemResponse>().OnLookEnter();
 
-                if (CharacterMovement.KeyboardMode == true)
+                if (hit.collider.gameObject.tag == "Glass")
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    if (CharacterMovement.KeyboardMode == true)
                     {
-                        if (HoldingObject == false)
+                                if (Input.GetMouseButtonDown(0))
                         {
-                            HoldingObject = true;
-                        }
-                        else
-                        {
-                            HoldingObject = false;
+                        
+                            if (HoldingGlass == false)
+                                    {
+                               
+                                        HoldingGlass = true;
+                                        
+                                    }
+                                    else
+                                    {
+                                
+                                HoldingGlass = false;
+                                       
+                                    }
+                                }
+                       
+                        hit.collider.gameObject.GetComponent<ItemResponse>().OnInteractionEnter();
+
+                    }
+                    if (CharacterMovement.GamepadMode == true)
+                    {
+
+                                if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+                                {
+                   
+                            if (HoldingGlass == false)
+                                    {
+                           
+                                HoldingGlass = true;
+                                       
+                                    }
+                                    else
+                                    {
+                            
+                                HoldingGlass = false;
+                                       
+                                    }
+                            hit.collider.gameObject.GetComponent<ItemResponse>().OnInteractionEnter();
+
                         }
                     }
                 }
-                if (CharacterMovement.GamepadMode == true)
+                else
                 {
-
-                    if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+                    if (CharacterMovement.KeyboardMode == true)
                     {
-                        if (HoldingObject == false)
-                        {
-                            HoldingObject = true;
+                                if (Input.GetMouseButtonDown(0))
+                                {
+                          
+                            if (HoldingObject == false)
+                                    {
+                              
+                                HoldingObject = true;
+                                    
+                                    }
+                                    else
+                                    {
+                             
+                                HoldingObject = false;
+                                       
+                                    }
+                            hit.collider.gameObject.GetComponent<ItemResponse>().OnInteractionEnter();
                         }
-                        else
-                        {
-                            HoldingObject = false;
-                        }
+                    }
+                    if (CharacterMovement.GamepadMode == true)
+                    {
+                                if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+                                {
+                         
+                            if (HoldingObject == false)
+                            {
+                         
+                                HoldingObject = true;
+                                    }
+                                    else
+                            {
+                              
+                                HoldingObject = false;
+                                    }
 
+                            hit.collider.gameObject.GetComponent<ItemResponse>().OnInteractionEnter();
+
+                        }
                     }
                 }
+     
             }
            
         }

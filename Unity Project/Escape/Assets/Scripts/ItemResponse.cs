@@ -8,7 +8,7 @@ public class ItemResponse : MonoBehaviour {
     public MeshRenderer rend;
     public Material NotSelect, Selected;
     public Text interactionmsg;
-    public GameObject interactiontext;
+    public GameObject interactiontext, player;
     public Transform PlayrCam;
     public bool BeingCarried;
     
@@ -28,6 +28,14 @@ public class ItemResponse : MonoBehaviour {
 
         rend.material = NotSelect;
         interactiontext.SetActive(false);
+        if (BeingCarried == true)
+        {
+            Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>());
+        }
+        else
+        {
+            Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>(), false);
+        }
     }
 
     public void OnLookEnter()
@@ -41,20 +49,55 @@ public class ItemResponse : MonoBehaviour {
         {
             interactionmsg.text = "Click to Interact";
         }
-        if (ItemInteraction.HoldingObject == true)
-        {
-            GetComponent<Rigidbody>().isKinematic = true;
-            transform.parent = PlayrCam;
-            BeingCarried = true;
-        }
         if (ItemInteraction.HoldingObject == false)
         {
-            rend.material = Selected;
-            interactiontext.SetActive(true);
-            GetComponent<Rigidbody>().isKinematic = false;
-            transform.parent = null;
-            BeingCarried = false;
+            if (ItemInteraction.HoldingGlass == false)
+            {
+                rend.material = Selected;
+                interactiontext.SetActive(true);
+            }
         }
 
+    }
+
+    public void OnInteractionEnter()
+    {
+        if (ItemInteraction.InventoryFull == false)
+        {
+            if (ItemInteraction.HoldingObject == true)
+            {
+                GetComponent<Rigidbody>().isKinematic = true;
+                transform.parent = PlayrCam;
+                BeingCarried = true;
+                ItemInteraction.InventoryFull = true;
+            }
+            if (ItemInteraction.HoldingGlass == true)
+            {
+                GetComponent<Rigidbody>().isKinematic = true;
+                transform.parent = PlayrCam;
+                BeingCarried = true;
+                ItemInteraction.InventoryFull = true;
+            }
+      
+        }
+        else
+        {
+            if (ItemInteraction.HoldingGlass == false)
+            {
+                GetComponent<Rigidbody>().isKinematic = false;
+                transform.parent = null;
+                BeingCarried = false;
+                ItemInteraction.InventoryFull = false;
+            }
+            if (ItemInteraction.HoldingObject == false)
+            {
+                GetComponent<Rigidbody>().isKinematic = false;
+                transform.parent = null;
+                BeingCarried = false;
+                ItemInteraction.InventoryFull = false;
+            }
+
+        }
+     
     }
 }
