@@ -26,7 +26,11 @@ public class ItemInteraction : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, 20))
         {
 
-            if (hit.collider.gameObject.GetComponent<ItemResponse>() !=null)
+            if (hit.collider.gameObject.GetComponent<Nine>() != null)
+            {
+                hit.collider.gameObject.GetComponent<Nine>().RotateStick();
+            }
+                if (hit.collider.gameObject.GetComponent<ItemResponse>() !=null)
             {
                 hit.collider.gameObject.GetComponent<ItemResponse>().OnLookEnter();
 
@@ -126,4 +130,18 @@ public class ItemInteraction : MonoBehaviour {
         }
 		
 	}
+
+    public void OnCollisionEnter(Collision collider)
+    {
+        if(collider.gameObject.name == "Tablet1")
+        {
+            Destroy(collider.gameObject);
+            EscapeUI.crocfound = true;
+        }
+        if (collider.gameObject.name == "Tablet2")
+        {
+            Destroy(collider.gameObject);
+            EscapeUI.hippofound = true;
+        }
+    }
 }

@@ -5,10 +5,11 @@ using UnityEngine;
 public class BridgeCrystal : MonoBehaviour {
 
     public float TimetoChange;
-    public bool change1, change2;
+    public bool change1, change2, tochange;
     public GameObject Bridge1, Bridge2;
     public MeshRenderer MRCrystal;
     public Material Mat1, Mat2, Mat3, Mat4;
+    public static bool SpawnTab1;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,8 @@ public class BridgeCrystal : MonoBehaviour {
         change1 = false;
         change2 = true;
         TimetoChange = 5;
+        tochange = false;
+        SpawnTab1 = false;
 	}
 	
 	// Update is called once per frame
@@ -27,18 +30,9 @@ public class BridgeCrystal : MonoBehaviour {
         }
         if (TimetoChange == 0)
         {
-            if (change1 == false)
-            {
-                change1 = true;
-                change2 = false;
-                TimetoChange = 5;
-            }
-          else
-            {
-                change1 = false;
-                change2 = true;
-                TimetoChange = 5;
-            }
+            Invoke("WaitABit", 1);
+            tochange = true;
+        
         }
 
         if (change2 == true)
@@ -51,7 +45,7 @@ public class BridgeCrystal : MonoBehaviour {
                 MRCrystal.material = Mat1;
             }
 
-            if (TimetoChange < 5 && TimetoChange > 2.5f)
+            if (TimetoChange < 4.5f && TimetoChange > 2.5f)
             {
                 MRCrystal.material = Mat2;
             }
@@ -74,7 +68,7 @@ public class BridgeCrystal : MonoBehaviour {
                 MRCrystal.material = Mat4;
             }
 
-            if (TimetoChange < 5 && TimetoChange > 2.5f)
+            if (TimetoChange < 4.5f && TimetoChange > 2.5f)
             {
                 MRCrystal.material = Mat3;
             }
@@ -90,6 +84,28 @@ public class BridgeCrystal : MonoBehaviour {
         }
 		
 	}
+
+    public void WaitABit()
+    {
+        TimetoChange = 5;
+        if (tochange == true)
+        {
+            if (change1 == false)
+            {
+                SpawnTab1 = true;
+                change1 = true;
+                change2 = false;
+                tochange = false;
+            }
+            else
+            {
+                change1 = false;
+                change2 = true;
+                tochange = false;
+            }
+        }
+   
+    }
 
     public void OnTriggerStay(Collider collider)
     {
