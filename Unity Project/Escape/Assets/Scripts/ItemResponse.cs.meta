@@ -3,7 +3,16 @@ guid: 811b49ce03d6f464c8913d132e7e728f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rend: {instanceID: 0}
+  - NotSelect: {instanceID: 0}
+  - Selected: {fileID: 2100000, guid: 1c3ab5d8c8d6d414498a6285dbae4253, type: 2}
+  - interactionmsg: {fileID: 114811400307138378, guid: 676b2d8bdd9823b4fa59ebc2510be4e7,
+      type: 2}
+  - interactiontext: {fileID: 1614873796951478, guid: 676b2d8bdd9823b4fa59ebc2510be4e7,
+      type: 2}
+  - player: {instanceID: 0}
+  - PlayrCam: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

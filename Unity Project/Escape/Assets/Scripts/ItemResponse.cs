@@ -17,17 +17,15 @@ public class ItemResponse : MonoBehaviour {
 	void Start () {
         BeingCarried = false;
         rend = GetComponent<MeshRenderer>();
-        interactiontext = GameObject.Find("InteractionMessage");
-        interactionmsg = GameObject.Find("InteractionMessage").GetComponent<Text>();
+     
 
 
     }
 	
 	// Update is called once per frame
 	void Update () {
+        
 
-        rend.material = NotSelect;
-        interactiontext.SetActive(false);
         if (BeingCarried == true)
         {
             Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>());
@@ -36,6 +34,7 @@ public class ItemResponse : MonoBehaviour {
         {
             Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>(), false);
         }
+        resetselected();
     }
 
     public void OnLookEnter()
@@ -99,5 +98,10 @@ public class ItemResponse : MonoBehaviour {
 
         }
      
+    }
+    public void resetselected()
+    {
+        rend.material = NotSelect;
+        interactiontext.SetActive(false);
     }
 }

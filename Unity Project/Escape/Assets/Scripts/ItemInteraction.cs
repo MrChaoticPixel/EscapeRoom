@@ -29,6 +29,7 @@ public class ItemInteraction : MonoBehaviour {
             if (hit.collider.gameObject.GetComponent<Nine>() != null)
             {
                 hit.collider.gameObject.GetComponent<Nine>().RotateStick();
+                hit.collider.gameObject.GetComponent<Nine>().PosMonitor();
             }
                 if (hit.collider.gameObject.GetComponent<ItemResponse>() !=null)
             {
@@ -128,6 +129,7 @@ public class ItemInteraction : MonoBehaviour {
             }
            
         }
+
 		
 	}
 
@@ -142,6 +144,11 @@ public class ItemInteraction : MonoBehaviour {
         {
             Destroy(collider.gameObject);
             EscapeUI.hippofound = true;
+        }
+        if (collider.gameObject.name == "Tablet3")
+        {
+            Destroy(collider.gameObject);
+            EscapeUI.scarabfound = true;
         }
     }
 }

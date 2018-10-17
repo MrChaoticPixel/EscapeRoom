@@ -10,13 +10,16 @@ public class Nine : MonoBehaviour {
     public Material NotSelect, Selected;
     public Transform StickTrans;
     public GameObject StickGO, interactiontext;
-    public bool Pos1, Pos2, Pos3, Pos4, Pos5, Pos6, Pos7, Pos8;
+    public float PosNo;
+    public bool Lookedat;
 
 	// Use this for initialization
 	void Start () {
         rend = GetComponent<MeshRenderer>();
         StickGO = gameObject;
         StickTrans = GetComponent<Transform>();
+        PosNo = 1;
+        Lookedat = false;
 		
 	}
 	
@@ -25,14 +28,34 @@ public class Nine : MonoBehaviour {
 
         rend.material = NotSelect;
         interactiontext.SetActive(false);
-        PosMonitor();
+        
     }
 
     public void PosMonitor()
     {
-        if (StickTrans.rotation.x < 47 && StickTrans.rotation.x > 43)
+        if (CharacterMovement.KeyboardMode == true)
         {
-            Pos8 = true;
+            if (Input.GetMouseButton(0))
+            {
+                PosNo = PosNo + 1;
+                if (PosNo == 9)
+                {
+                    PosNo = 1;
+                }
+            }
+
+            }
+        if (CharacterMovement.GamepadMode == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+            {
+                PosNo = PosNo + 1;
+                if (PosNo == 9)
+                {
+                    PosNo = 1;
+                }
+            }
+
         }
     }
 
@@ -54,7 +77,9 @@ public class Nine : MonoBehaviour {
             if (Input.GetMouseButtonDown(0))
             {
                 StickTrans.Rotate(Vector3.right * 45);
+    
             }
+      
         }
 
         if (CharacterMovement.GamepadMode == true)
@@ -62,7 +87,9 @@ public class Nine : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
                 StickTrans.Rotate(Vector3.right * 45);
+
             }
+
         }
     }
 }
