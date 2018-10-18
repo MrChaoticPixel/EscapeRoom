@@ -30,8 +30,8 @@ public class Tabletspawning : MonoBehaviour {
 
 
         SpawnTab1();
-        SpawnTab2();
-
+        SpawnTab3();
+        SpawnTab4();
     }
 
     public void SpawnTab1()
@@ -42,7 +42,7 @@ public class Tabletspawning : MonoBehaviour {
         }
     }
 
-    public void SpawnTab2()
+    public void SpawnTab3()
     {
         if (Stick1.PosNo == 4 || Stick1.PosNo == 8)
         {
@@ -133,40 +133,18 @@ public class Tabletspawning : MonoBehaviour {
             Stick11On = false;
         }
 
-        if (Stick1On == true)
+if (Stick1On == true && Stick2On == true && Stick3On == true && Stick4On == true && Stick5On == true && Stick6On == true && Stick7On == true && Stick8On == true && Stick9On == true && Stick10On == true && Stick11On == true)
         {
-            if (Stick2On == true)
-            {
-                if (Stick3On == true)
-                {
-                    if (Stick4On == true)
-                    {
-                        if (Stick5On == true)
-                        {
-                            if (Stick6On == true)
-                            {
-                                if (Stick7On == true)
-                                {
-                                    if (Stick8On == true)
-                                    {
-                                        if (Stick9On == true)
-                                        {
-                                            if (Stick10On == true)
-                                            {
-                                                if (Stick11On == true)
-                                                {
-                                                    Tab3.SetActive(true);
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            Tab3.SetActive(true);
         }
 
+    }
+
+    public void SpawnTab4()
+    {
+        if (AnubisTwo.Reunited == true)
+        {
+            Tab4.SetActive(true);
+        }
     }
 }

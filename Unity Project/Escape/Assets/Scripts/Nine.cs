@@ -5,30 +5,37 @@ using UnityEngine.UI;
 
 public class Nine : MonoBehaviour {
 
-    public Text interactionmsg;
-    public MeshRenderer rend;
-    public Material NotSelect, Selected;
+    public Text interactionmsg2;
+    public MeshRenderer NineRend;
+    public Material NotSelectNine, SelectedNine;
     public Transform StickTrans;
     public GameObject StickGO, interactiontext;
     public float PosNo;
-    public bool Lookedat;
+    
 
 	// Use this for initialization
 	void Start () {
-        rend = GetComponent<MeshRenderer>();
+        NineRend = GetComponent<MeshRenderer>();
         StickGO = gameObject;
         StickTrans = GetComponent<Transform>();
         PosNo = 1;
-        Lookedat = false;
-		
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
-        rend.material = NotSelect;
-        interactiontext.SetActive(false);
-        
+        if (CharacterMovement.GamepadMode == true)
+        {
+            interactionmsg2.text = "Press A to Interact";
+        }
+        if (CharacterMovement.KeyboardMode == true)
+        {
+            interactionmsg2.text = "Click to Interact";
+        }
+
+        NineRend.material = NotSelectNine;
+        interactionmsg2.enabled = false;
     }
 
     public void PosMonitor()
@@ -61,16 +68,7 @@ public class Nine : MonoBehaviour {
 
     public void RotateStick()
     {
-        if (CharacterMovement.GamepadMode == true)
-        {
-            interactionmsg.text = "Press A to Interact";
-        }
-        if (CharacterMovement.KeyboardMode == true)
-        {
-            interactionmsg.text = "Click to Interact";
-        }
-        rend.material = Selected;
-        interactiontext.SetActive(true);
+     
 
         if (CharacterMovement.KeyboardMode == true)
         {
@@ -91,5 +89,11 @@ public class Nine : MonoBehaviour {
             }
 
         }
+    }
+    public void ShowInteraction()
+    {
+        Debug.Log("Hi There");
+        interactionmsg2.enabled = true;
+            NineRend.material = SelectedNine;
     }
 }

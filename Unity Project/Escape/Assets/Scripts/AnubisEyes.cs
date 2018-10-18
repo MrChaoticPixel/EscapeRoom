@@ -9,6 +9,7 @@ public class AnubisEyes : MonoBehaviour {
     public MeshRenderer AnuRen;
     public Material Mat1, Mat2;
     public bool drop;
+    public ItemResponse staff1;
 
     // Use this for initialization
     void Start () {
@@ -16,6 +17,7 @@ public class AnubisEyes : MonoBehaviour {
         drop = false;
         TimetoBlind = 3;
         AnuRen.material = Mat1;
+        staff1.cannotstaff = true;
     }
 	
 	// Update is called once per frame
@@ -35,6 +37,7 @@ public class AnubisEyes : MonoBehaviour {
             staff.GetComponent<Rigidbody>().isKinematic = false;
             staff.transform.parent = null;
             staff = null;
+            staff1.cannotstaff = false;
             AnuRen.material = Mat2;
         }
     }
