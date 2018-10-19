@@ -6,6 +6,7 @@ public class ItemInteraction : MonoBehaviour {
 
     public RaycastHit hit;
     public static bool HoldingObject, HoldingGlass, InventoryFull;
+    public Transform Tab1, Tab2, Tab3, Tab4;
 
 	// Use this for initialization
 	void Start () {
@@ -25,10 +26,17 @@ public class ItemInteraction : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit, 20))
         {
-
-            if (hit.collider.gameObject.GetComponent<ItemResponse>() !=null)
+            Debug.Log("hello");
+            if (hit.collider.gameObject.GetComponent<Nine>() != null)
             {
-                hit.collider.gameObject.GetComponent<ItemResponse>().OnLookEnter();
+                hit.collider.gameObject.GetComponent<Nine>().RotateStick();
+                hit.collider.gameObject.GetComponent<Nine>().PosMonitor();
+                hit.collider.gameObject.GetComponent<Nine>().ShowInteraction();
+            }
+                if (hit.collider.gameObject.GetComponent<ItemResponse>() !=null)
+            {
+                hit.collider.gameObject.GetComponent<ItemResponse>().ShowInteraction();
+              
 
                 if (hit.collider.gameObject.tag == "Glass")
                 {
@@ -124,6 +132,31 @@ public class ItemInteraction : MonoBehaviour {
             }
            
         }
+
 		
 	}
+
+    public void OnCollisionEnter(Collision collider)
+    {
+        if(collider.gameObject.name == "Tablet1")
+        {
+            Tab1.position = new Vector3(-3000, 200, 1500);
+            EscapeUI.crocfound = true;
+        }
+        if (collider.gameObject.name == "Tablet2")
+        {
+            Tab2.position = new Vector3(-3000, 200, 1500);
+            EscapeUI.hippofound = true;
+        }
+        if (collider.gameObject.name == "Tablet3")
+        {
+            Tab3.position = new Vector3(-3000, 200, 1500);
+            EscapeUI.scarabfound = true;
+        }
+        if (collider.gameObject.name == "Tablet4")
+        {
+            Tab4.position = new Vector3(-3000, 200, 1500);
+            EscapeUI.catfound = true;
+        }
+    }
 }

@@ -7,6 +7,8 @@ TagManager:
   - LightSource
   - Glass
   - LightReflection
+  - Character
+  - WeightBox
   layers:
   - Default
   - TransparentFX

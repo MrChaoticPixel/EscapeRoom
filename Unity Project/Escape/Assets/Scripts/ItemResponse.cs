@@ -11,23 +11,19 @@ public class ItemResponse : MonoBehaviour {
     public GameObject interactiontext, player;
     public Transform PlayrCam;
     public bool BeingCarried;
+    public bool cannotstaff;
     
 
 	// Use this for initialization
 	void Start () {
-        BeingCarried = false;
         rend = GetComponent<MeshRenderer>();
-        interactiontext = GameObject.Find("InteractionMessage");
-        interactionmsg = GameObject.Find("InteractionMessage").GetComponent<Text>();
-
-
+        BeingCarried = false;
     }
 	
 	// Update is called once per frame
-	void Update () {
-
-        rend.material = NotSelect;
-        interactiontext.SetActive(false);
+	void FixedUpdate () {
+            rend.material = NotSelect;
+            interactionmsg.enabled = false;
         if (BeingCarried == true)
         {
             Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>());
@@ -36,11 +32,6 @@ public class ItemResponse : MonoBehaviour {
         {
             Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>(), false);
         }
-    }
-
-    public void OnLookEnter()
-    {
-      
         if (CharacterMovement.GamepadMode == true)
         {
             interactionmsg.text = "Press A to Interact";
@@ -49,15 +40,6 @@ public class ItemResponse : MonoBehaviour {
         {
             interactionmsg.text = "Click to Interact";
         }
-        if (ItemInteraction.HoldingObject == false)
-        {
-            if (ItemInteraction.HoldingGlass == false)
-            {
-                rend.material = Selected;
-                interactiontext.SetActive(true);
-            }
-        }
-
     }
 
     public void OnInteractionEnter()
@@ -66,10 +48,14 @@ public class ItemResponse : MonoBehaviour {
         {
             if (ItemInteraction.HoldingObject == true)
             {
-                GetComponent<Rigidbody>().isKinematic = true;
-                transform.parent = PlayrCam;
-                BeingCarried = true;
-                ItemInteraction.InventoryFull = true;
+                if (cannotstaff == false)
+                {
+                    GetComponent<Rigidbody>().isKinematic = true;
+                    transform.parent = PlayrCam;
+                    BeingCarried = true;
+                    ItemInteraction.InventoryFull = true;
+                }
+             
             }
             if (ItemInteraction.HoldingGlass == true)
             {
@@ -99,5 +85,22 @@ public class ItemResponse : MonoBehaviour {
 
         }
      
+    }
+   
+
+    public void ShowInteraction()
+    {
+        if (BeingCarried == false)
+        {
+
+            if (cannotstaff  == false)
+            {
+                interactionmsg.enabled = true;
+                rend.material = Selected;
+            }
+        
+        }
+      
+       
     }
 }
