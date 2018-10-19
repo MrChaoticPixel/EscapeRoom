@@ -9,6 +9,8 @@ TagManager:
   - LightReflection
   - Character
   - WeightBox
+  - TorchHolder
+  - Torch
   layers:
   - Default
   - TransparentFX

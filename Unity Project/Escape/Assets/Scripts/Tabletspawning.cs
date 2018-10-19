@@ -32,6 +32,7 @@ public class Tabletspawning : MonoBehaviour {
         SpawnTab1();
         SpawnTab3();
         SpawnTab4();
+        SpawnTab5();
     }
 
     public void SpawnTab1()
@@ -145,6 +146,13 @@ if (Stick1On == true && Stick2On == true && Stick3On == true && Stick4On == true
         if (AnubisTwo.Reunited == true)
         {
             Tab4.SetActive(true);
+        }
+    }
+    public void SpawnTab5()
+    {
+        if (TorchHolders.HolActive1 == true && TorchHolders.HolActive2 == true && TorchHolders.HolActive3 == true && TorchHolders.HolActive4 == true && TorchHolders.HolActive5 == true && TorchHolders.HolActive6 == true)
+        {
+            Tab5.SetActive(true);
         }
     }
 }
