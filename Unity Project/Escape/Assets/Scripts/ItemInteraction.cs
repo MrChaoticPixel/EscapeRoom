@@ -6,7 +6,7 @@ public class ItemInteraction : MonoBehaviour {
 
     public RaycastHit hit;
     public static bool HoldingObject, HoldingGlass, InventoryFull;
-    public Transform Tab1, Tab2, Tab3, Tab4;
+    public Transform Tab1, Tab2, Tab3, Tab4, Tab5;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +24,7 @@ public class ItemInteraction : MonoBehaviour {
 
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
 
-        if (Physics.Raycast(ray, out hit, 20))
+        if (Physics.Raycast(ray, out hit, 40))
         {
             Debug.Log("hello");
             if (hit.collider.gameObject.GetComponent<Nine>() != null)
@@ -33,7 +33,12 @@ public class ItemInteraction : MonoBehaviour {
                 hit.collider.gameObject.GetComponent<Nine>().PosMonitor();
                 hit.collider.gameObject.GetComponent<Nine>().ShowInteraction();
             }
-                if (hit.collider.gameObject.GetComponent<ItemResponse>() !=null)
+            if (hit.collider.gameObject.GetComponent<Pillars>() != null)
+            {
+                hit.collider.gameObject.GetComponent<Pillars>().ShowInteraction();
+                hit.collider.gameObject.GetComponent<Pillars>().RotatePillars();
+            }
+            if (hit.collider.gameObject.GetComponent<ItemResponse>() !=null)
             {
                 hit.collider.gameObject.GetComponent<ItemResponse>().ShowInteraction();
               
@@ -157,6 +162,11 @@ public class ItemInteraction : MonoBehaviour {
         {
             Tab4.position = new Vector3(-3000, 200, 1500);
             EscapeUI.catfound = true;
+        }
+        if (collider.gameObject.name == "Tablet5")
+        {
+            Tab5.position = new Vector3(-3000, 200, 1500);
+            EscapeUI.falfound = true;
         }
     }
 }
