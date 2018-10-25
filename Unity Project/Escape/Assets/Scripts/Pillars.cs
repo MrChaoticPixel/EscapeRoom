@@ -13,6 +13,7 @@ public class Pillars : MonoBehaviour {
     public Pillars P1, P2, P3, P4, P5, P6;
     public float PillarPos;
     public static bool P1Active, P2Active, P3Active, P4Active, P5Active, P6Active;
+    public bool LookingAt;
 
 
 
@@ -28,6 +29,7 @@ public class Pillars : MonoBehaviour {
         P5Active = false;
         P6Active = false;
         PillarPos = 1;
+        LookingAt = false;
 		
 	}
 	
@@ -43,6 +45,7 @@ public class Pillars : MonoBehaviour {
         }
         interactionmsg3.enabled = false;
         PillarMS.material = NotS;
+        LookingAt = false;
 
         if (PillarPos == 5)
         {
@@ -126,9 +129,17 @@ public class Pillars : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0))
             {
-                //PillarTrans.eulerAngles = new Vector3(PillarTrans.rotation.x, PillarTrans.rotation.y+45, PillarTrans.rotation.z);
-                PillarTrans.Rotate(Vector3.up * 45);
-                PillarPos = PillarPos + 1;
+                if (P4.LookingAt == true)
+                {
+                    PillarTrans.Rotate(Vector3.up * 45);
+                    PillarPos = PillarPos + 1;
+                    P1.PillarTrans.Rotate(Vector3.up * 45);
+                    P1.PillarPos = P1.PillarPos + 1;
+                    P5.PillarTrans.Rotate(Vector3.up * 45);
+                    P5.PillarPos = P5.PillarPos + 1;
+                }
+               // PillarTrans.Rotate(Vector3.up * 45);
+               // PillarPos = PillarPos + 1;
             }
 
         }
@@ -137,9 +148,48 @@ public class Pillars : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
-                // PillarTrans.eulerAngles = new Vector3(PillarTrans.rotation.x, PillarTrans.rotation.y + 45, PillarTrans.rotation.z);
-                PillarTrans.Rotate(Vector3.up * 45);
-                PillarPos = PillarPos + 1;
+                if (P6.LookingAt == true)
+                {
+                    PillarTrans.Rotate(Vector3.up * 45);
+                    PillarPos = PillarPos + 1;
+                    P5.PillarTrans.Rotate(Vector3.up * 45);
+                    P5.PillarPos = P5.PillarPos + 1;
+                }
+                if (P5.LookingAt == true)
+                {
+                    PillarTrans.Rotate(Vector3.up * 45);
+                    PillarPos = PillarPos + 1;
+                    P3.PillarTrans.Rotate(Vector3.up * 45);
+                    P3.PillarPos = P3.PillarPos + 1;
+                }
+                if (P4.LookingAt == true)
+                {
+                    PillarTrans.Rotate(Vector3.up * 45);
+                    PillarPos = PillarPos + 1;
+                    P1.PillarTrans.Rotate(Vector3.up * 45);
+                    P1.PillarPos = P1.PillarPos + 1;
+                }
+                if (P3.LookingAt == true)
+                {
+                    PillarTrans.Rotate(Vector3.up * 45);
+                    PillarPos = PillarPos + 1;
+                }
+                if (P2.LookingAt == true)
+                {
+                    PillarTrans.Rotate(Vector3.up * 45);
+                    PillarPos = PillarPos + 1;
+                    P3.PillarTrans.Rotate(Vector3.up * 45);
+                    P3.PillarPos = P3.PillarPos + 1;
+                }
+                if (P1.LookingAt == true)
+                {
+                    PillarTrans.Rotate(Vector3.up * 45);
+                    PillarPos = PillarPos + 1;
+                    P6.PillarTrans.Rotate(Vector3.up * 45);
+                    P6.PillarPos = P6.PillarPos + 1;
+                }
+                //PillarTrans.Rotate(Vector3.up * 45);
+                // PillarPos = PillarPos + 1;
 
             }
 
@@ -150,5 +200,6 @@ public class Pillars : MonoBehaviour {
         Debug.Log("Hi There");
         interactionmsg3.enabled = true;
         PillarMS.material = Select;
+        LookingAt = true;
     }
 }

@@ -6,7 +6,7 @@ public class ItemInteraction : MonoBehaviour {
 
     public RaycastHit hit;
     public static bool HoldingObject, HoldingGlass, InventoryFull;
-    public Transform Tab1, Tab2, Tab3, Tab4, Tab5;
+    public Transform Tab1, Tab2, Tab3, Tab4, Tab5, Tab6, Tab7;
 
 	// Use this for initialization
 	void Start () {
@@ -167,6 +167,11 @@ public class ItemInteraction : MonoBehaviour {
         {
             Tab5.position = new Vector3(-3000, 200, 1500);
             EscapeUI.falfound = true;
+        }
+        if (collider.gameObject.name == "Tablet6")
+        {
+            Tab6.position = new Vector3(-3000, 200, 1500);
+            EscapeUI.snakefound = true;
         }
     }
 }

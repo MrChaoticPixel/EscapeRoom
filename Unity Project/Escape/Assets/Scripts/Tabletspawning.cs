@@ -33,6 +33,7 @@ public class Tabletspawning : MonoBehaviour {
         SpawnTab3();
         SpawnTab4();
         SpawnTab5();
+        SpawnTab6();
     }
 
     public void SpawnTab1()
@@ -153,6 +154,13 @@ if (Stick1On == true && Stick2On == true && Stick3On == true && Stick4On == true
         if (TorchHolders.HolActive1 == true && TorchHolders.HolActive2 == true && TorchHolders.HolActive3 == true && TorchHolders.HolActive4 == true && TorchHolders.HolActive5 == true && TorchHolders.HolActive6 == true)
         {
             Tab5.SetActive(true);
+        }
+    }
+    public void SpawnTab6()
+    {
+        if (Pillars.P1Active == true && Pillars.P2Active == true && Pillars.P3Active == true && Pillars.P4Active == true && Pillars.P5Active == true && Pillars.P6Active == true)
+        {
+            Tab6.SetActive(true);
         }
     }
 }
