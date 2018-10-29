@@ -27,6 +27,11 @@ public class ItemInteraction : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, 40))
         {
             Debug.Log("hello");
+            if (hit.collider.gameObject.GetComponent<TabletPuzzle>() != null)
+            {
+                hit.collider.gameObject.GetComponent<TabletPuzzle>().ShowInteraction();
+                hit.collider.gameObject.GetComponent<TabletPuzzle>().ChangePos();
+            }
             if (hit.collider.gameObject.GetComponent<Nine>() != null)
             {
                 hit.collider.gameObject.GetComponent<Nine>().RotateStick();
