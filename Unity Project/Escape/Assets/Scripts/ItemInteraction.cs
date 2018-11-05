@@ -26,7 +26,7 @@ public class ItemInteraction : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit, 40))
         {
-            Debug.Log("hello");
+            //Debug.Log("hello");
             if (hit.collider.gameObject.GetComponent<TabletPuzzle>() != null)
             {
                 hit.collider.gameObject.GetComponent<TabletPuzzle>().ShowInteraction();

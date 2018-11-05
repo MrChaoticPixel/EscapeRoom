@@ -197,7 +197,7 @@ public class Pillars : MonoBehaviour {
     }
     public void ShowInteraction()
     {
-        Debug.Log("Hi There");
+        //Debug.Log("Hi There");
         interactionmsg3.enabled = true;
         PillarMS.material = Select;
         LookingAt = true;
